@@ -1,0 +1,84 @@
+package binarytree;
+
+public class BinaryTreeInt {
+
+	public static void main(String[] args) {
+		 
+		Travrsel t1 = new Travrsel();
+		t1.root=new Node1(1);
+		t1.root.left=new Node1(2);
+		t1.root.right=new Node1(3);
+		t1.root.left.left=new Node1(4);
+		t1.root.left.right=new Node1(5);
+		t1.root.right.left=new Node1(6);
+		t1.root.right.right=new Node1(7);
+		
+		t1.preOrder(t1.root);
+		System.out.println();
+		t1.inOrder(t1.root);
+		System.out.println();
+		t1.postOrder(t1.root);
+
+	}
+}
+class Node1
+{
+	int key;
+	Node1 left;
+	Node1 right;
+	Node1(int key)
+	{
+		this.key=key;
+	}
+}
+class Travrsel
+{
+	Node1 root;
+	public void preOrder(Node1 a)
+	{
+		if(a!=null)
+		{
+			System.out.print(a.key+" ");
+			preOrder(a.left);
+			preOrder(a.right);
+		}
+	}
+	
+	public void inOrder(Node1 a)
+	{
+		if(a!=null)
+		{
+			
+			preOrder(a.left);
+			System.out.print(a.key+" ");
+			preOrder(a.right);
+		}
+	}
+	
+	public void postOrder(Node1 a)
+	{
+		if(a!=null)
+		{
+			
+			preOrder(a.left);
+			preOrder(a.right);
+			System.out.print(a.key+" ");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
