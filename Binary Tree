@@ -1,0 +1,81 @@
+package binarytree;
+
+
+class Node
+{
+	
+	char key;
+	Node left;
+	Node right;
+	
+	Node(char key)
+	{
+	this.key=key;	
+	}
+}
+
+
+class Traversal
+{
+	Node root;
+	
+	public void preorderTraversal(Node n)
+	{
+		if(n!=null)
+		{
+			System.out.print(n.key+" ");
+			preorderTraversal(n.left);
+			preorderTraversal(n.right);
+		}
+		
+	}
+	
+	public void inOredr(Node m)
+	{
+		if(m!=null)
+		{
+			inOredr(m.left);
+		System.out.print(m.key+" ");
+		inOredr(m.right);
+		
+		}
+		
+	}
+	public void postOrder(Node k)
+	{
+		if(k!=null)
+		{
+			postOrder(k.left);
+			postOrder(k.right);
+			System.out.print(k.key+" ");
+		}
+		
+	}
+}
+
+
+
+public class BinaryTree {
+	
+	public static void main(String[] args) 
+	{
+	 Traversal t1 = new	Traversal();
+	 t1.root=new Node('A');
+	 t1.root.left=new Node('B');
+	 t1.root.right=new Node('C');
+	 t1.root.left.left=new  Node('D');
+	 t1.root.left.right=new Node('E');
+	 t1.root.right.left=new Node('F');
+	 t1.root.right.right=new Node('G');
+	 
+	 t1.preorderTraversal(t1.root);
+	 System.out.println("  PreOrderTraversal");
+	 System.out.println();
+	 t1.inOredr(t1.root);
+	 System.out.println("  InOrderTraversal");
+     System.out.println();
+     t1.postOrder(t1.root);
+     System.out.println("  PostOrderTraversal");
+     
+	}
+}
